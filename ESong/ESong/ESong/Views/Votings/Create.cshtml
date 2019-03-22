@@ -1,0 +1,181 @@
+﻿@model Voting
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+
+        @Html.DropDownListFor(model => model.ZemljeGlasaci, new SelectList(
+              new List<Object>{new { value = "eddddxxzee" , text = "Red"},
+                               new { value = "azddxxza" , text = "Blue"},
+                               new { value = "aaddxxddfa" , text = "Green"}},"value","text",2))
+
+
+        @Html.DropDownListFor(model => model.jedan, new SelectList(
+                 new List<Object>
+           {
+                   new { value = 0 , text = "Red"  },
+               new { value = "eddexxee" , text = "Blue" },
+               new { value = "eeeddxxdeee" , text = "Green"}
+               },
+               "value",
+               "text",
+                       2))
+
+
+
+        @Html.DropDownListFor(model => model.dva, new SelectList(
+                 new List<Object>
+           {
+                   new { value = "ggg" , text = "Red"  },
+               new { value = "nnn" , text = "Blue" },
+               new { value = "mmm" , text = "Green"}
+               },
+               "value",
+               "text",
+                       2))
+
+
+        @Html.DropDownListFor(model => model.tri, new SelectList(
+                 new List<Object>
+           {
+                   new { value = 0 , text = "Red"  },
+               new { value = 1 , text = "Blue" },
+               new { value = 2 , text = "Green"}
+               },
+               "value",
+               "text",
+                       2))
+
+
+
+        @Html.DropDownListFor(model => model.cetiri, new SelectList(
+                 new List<Object>
+           {
+                   new { value = 0 , text = "Red"  },
+               new { value = 1 , text = "Blue" },
+               new { value = 2 , text = "Green"}
+               },
+               "value",
+               "text",
+                       2))
+
+
+
+        @Html.DropDownListFor(model => model.pet, new SelectList(
+                 new List<Object>
+           {
+                   new { value = 0 , text = "Red"  },
+               new { value = 1 , text = "Blue" },
+               new { value = 2 , text = "Green"}
+               },
+               "value",
+               "text",
+                       2))
+
+
+
+
+        @Html.DropDownListFor(model => model.sest, new SelectList(
+                 new List<Object>
+           {
+                   new { value = 0 , text = "Red"  },
+               new { value = 1 , text = "Blue" },
+               new { value = 2 , text = "Green"}
+               },
+               "value",
+               "text",
+                       2))
+
+
+
+        @Html.DropDownListFor(model => model.sedam, new SelectList(
+                 new List<Object>
+           {
+                   new { value = 0 , text = "Red"  },
+               new { value = 1 , text = "Blue" },
+               new { value = 2 , text = "Green"}
+               },
+               "value",
+               "text",
+                       2))
+
+
+
+        @Html.DropDownListFor(model => model.osam, new SelectList(
+                 new List<Object>
+           {
+                   new { value = 0 , text = "Red"  },
+               new { value = 1 , text = "Blue" },
+               new { value = 2 , text = "Green"}
+               },
+               "value",
+               "text",
+                       2))
+
+
+
+        @Html.DropDownListFor(model => model.deset, new SelectList(
+                 new List<Object>
+           {
+                   new { value = 0 , text = "Red"  },
+               new { value = 1 , text = "Blue" },
+               new { value = 2 , text = "Green"}
+               },
+               "value",
+               "text",
+                       2))
+
+
+
+
+
+        @Html.DropDownListFor(model => model.dvanaest, new SelectList(
+                 new List<Object>
+           {
+                   new { value = "cc" , text = "Red"  },
+               new { value = 1 , text = "Blue" },
+               new { value = 2 , text = "Green"}
+               },
+               "value",
+               "text",
+                       2))
+
+
+
+
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+</body>
+</html>

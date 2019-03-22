@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ESONGModelStoreContainer" CdmEntityContainer="ESONGEntities4">
+    <FunctionImportMapping FunctionImportName="GetPRIKAZ" FunctionName="ESONGModel.Store.PRIKAZ">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ESONGModel.SORTIRAJ_Result">
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSORTIRAJ" FunctionName="ESONGModel.Store.SORTIRAJ">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ESONGModel.SORTIRAJ_Result">
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

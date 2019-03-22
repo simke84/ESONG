@@ -1,0 +1,306 @@
+﻿@model Voting
+
+
+
+@{
+    Layout = "~/Views/Shared/_zadropboxove.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cyprus</title>
+    <style>
+
+        .field-validation-error {
+            color: darkred;
+            font: italic;
+            font-size: large;
+        }
+    </style>
+
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+
+        @Html.AntiForgeryToken()
+
+
+        <h2 style="color:yellow;">CYPRUS VOTES:</h2>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <br /><br />
+            <div class="col-md-6">
+                @Html.DropDownListFor(model => model.ZemljeGlasaci, new SelectList(
+   new List<Object>{new { value = "Cyprus" , text = "Cyprus"}
+                    }, "value", "text", 1), new { @class = "helper-format", style = "color:red;" })
+
+            </div>
+            @Html.ValidationMessageFor(model => model.ZemljeGlasaci, "", new { @class = "text-danger" })
+        </div><br /><hr />
+
+                    <div class="form-group">
+
+                        @Html.LabelFor(model => model.jedan, htmlAttributes: new { @class = "control-label col-md-2", @style = "color:yellow;font-size: large;" })
+                        <div class="col-md-4">
+                            @Html.DropDownListFor(model => model.jedan, new SelectList(
+               new List<Object>{new { value = "Armenia" , text = "Armenia"},
+                                        new { value = "Belarus" , text = "Belarus"},
+                                        new { value = "Belgium" , text = "Belgium"},
+                                        new { value = "BIH" , text = "BIH"},
+                                        new { value = "Ukraine" , text = "Ukraine"},
+                                        new { value = "Malta" , text = "Malta"},
+                                        new { value = "Montenegro" , text = "Montenegro"},
+                                        new { value = "Estonia" , text = "Estonia"},
+                                        new { value = "Finland" , text = "Finland"},
+                                        new { value = "France" , text = "France"},
+                                        new { value = "Romania" , text = "Romania"},
+                                        new { value = "Russia" , text = "Russia"},
+                                       new { value = "Serbia" , text = "Serbia"},
+                                       new { value = "Sweden" , text = "Sweden"}}, "value","text"), "--select one--")
+
+
+                        </div>
+                        @Html.ValidationMessageFor(model => model.jedan, "", new { @class = "text-danger" })
+                    </div><br /><br />
+
+                          <div class="form-group">
+
+                              @Html.LabelFor(model => model.dva, htmlAttributes: new { @class = "control-label col-md-2", @style = "color:yellow;font-size: large;" })
+                              <div class="col-md-4">
+                                  @Html.DropDownListFor(model => model.dva, new SelectList(
+                     new List<Object>{new { value = "Armenia" , text = "Armenia"},
+                                              new { value = "Belarus" , text = "Belarus"},
+                                              new { value = "Belgium" , text = "Belgium"},
+                                              new { value = "BIH" , text = "BIH"},
+                                              new { value = "Ukraine" , text = "Ukraine"},
+                                              new { value = "Malta" , text = "Malta"},
+                                              new { value = "Montenegro" , text = "Montenegro"},
+                                              new { value = "Estonia" , text = "Estonia"},
+                                              new { value = "Finland" , text = "Finland"},
+                                              new { value = "France" , text = "France"},
+                                              new { value = "Romania" , text = "Romania"},
+                                              new { value = "Russia" , text = "Russia"},
+                                             new { value = "Serbia" , text = "Serbia"},
+                                             new { value = "Sweden" , text = "Sweden"}}, "value", "text"), "--select one--")
+
+
+                              </div>
+                              @Html.ValidationMessageFor(model => model.dva, "", new { @class = "text-danger" })
+                          </div><br />
+
+                                <div class="form-group">
+
+                                    @Html.LabelFor(model => model.tri, htmlAttributes: new { @class = "control-label col-md-2", @style = "color:yellow;font-size: large;" })
+                                    <div class="col-md-4">
+                                        @Html.DropDownListFor(model => model.tri, new SelectList(
+                        new List<Object>{new { value = "Armenia" , text = "Armenia"},
+                                                    new { value = "Belarus" , text = "Belarus"},
+                                                    new { value = "Belgium" , text = "Belgium"},
+                                                    new { value = "BIH" , text = "BIH"},
+                                                    new { value = "Ukraine" , text = "Ukraine"},
+                                                    new { value = "Malta" , text = "Malta"},
+                                                    new { value = "Montenegro" , text = "Montenegro"},
+                                                    new { value = "Estonia" , text = "Estonia"},
+                                                    new { value = "Finland" , text = "Finland"},
+                                                    new { value = "France" , text = "France"},
+                                                    new { value = "Romania" , text = "Romania"},
+                                                    new { value = "Russia" , text = "Russia"},
+                                                   new { value = "Serbia" , text = "Serbia"},
+                                                   new { value = "Sweden" , text = "Sweden"}}, "value", "text"), "--select one--")
+
+                                    </div>
+                                    @Html.ValidationMessageFor(model => model.tri, "", new { @class = "text-danger" })
+                                </div><br />
+
+                                      <div class="form-group">
+
+                                          @Html.LabelFor(model => model.cetiri, htmlAttributes: new { @class = "control-label col-md-2", @style = "color:yellow;font-size: large;" })
+                                          <div class="col-md-4">
+                                              @Html.DropDownListFor(model => model.cetiri, new SelectList(
+                              new List<Object>{new { value = "Armenia" , text = "Armenia"},
+                                                          new { value = "Belarus" , text = "Belarus"},
+                                                          new { value = "Belgium" , text = "Belgium"},
+                                                          new { value = "BIH" , text = "BIH"},
+                                                          new { value = "Ukraine" , text = "Ukraine"},
+                                                          new { value = "Malta" , text = "Malta"},
+                                                          new { value = "Montenegro" , text = "Montenegro"},
+                                                          new { value = "Estonia" , text = "Estonia"},
+                                                          new { value = "Finland" , text = "Finland"},
+                                                          new { value = "France" , text = "France"},
+                                                          new { value = "Romania" , text = "Romania"},
+                                                          new { value = "Russia" , text = "Russia"},
+                                                         new { value = "Serbia" , text = "Serbia"},
+                                                         new { value = "Sweden" , text = "Sweden"}}, "value", "text"),"--select one--")
+
+                                          </div> @Html.ValidationMessageFor(model => model.cetiri, "", new { @class = "text-danger" })
+                                      </div><br />
+
+                                            <div class="form-group">
+
+                                                @Html.LabelFor(model => model.pet, htmlAttributes: new { @class = "control-label col-md-2", @style = "color:yellow;font-size: large;" })
+                                                <div class="col-md-4">
+                                                    @Html.DropDownListFor(model => model.pet, new SelectList(
+                                    new List<Object>{new { value = "Armenia" , text = "Armenia"},
+                                                                new { value = "Belarus" , text = "Belarus"},
+                                                                new { value = "Belgium" , text = "Belgium"},
+                                                                new { value = "BIH" , text = "BIH"},
+                                                                new { value = "Ukraine" , text = "Ukraine"},
+                                                                new { value = "Malta" , text = "Malta"},
+                                                                new { value = "Montenegro" , text = "Montenegro"},
+                                                                new { value = "Estonia" , text = "Estonia"},
+                                                                new { value = "Finland" , text = "Finland"},
+                                                                new { value = "France" , text = "France"},
+                                                                new { value = "Romania" , text = "Romania"},
+                                                                new { value = "Russia" , text = "Russia"},
+                                                               new { value = "Serbia" , text = "Serbia"},
+                                                               new { value = "Sweden" , text = "Sweden"}}, "value", "text"), "--select one--")
+
+                                                </div> @Html.ValidationMessageFor(model => model.pet, "", new { @class = "text-danger" })
+                                            </div><br />
+
+                                                  <div class="form-group">
+
+                                                      @Html.LabelFor(model => model.sest, htmlAttributes: new { @class = "control-label col-md-2", @style = "color:yellow;font-size: large;" })
+                                                      <div class="col-md-4">
+                                                          @Html.DropDownListFor(model => model.sest, new SelectList(
+                                          new List<Object>{new { value = "Armenia" , text = "Armenia"},
+                                                                      new { value = "Belarus" , text = "Belarus"},
+                                                                      new { value = "Belgium" , text = "Belgium"},
+                                                                      new { value = "BIH" , text = "BIH"},
+                                                                      new { value = "Ukraine" , text = "Ukraine"},
+                                                                      new { value = "Malta" , text = "Malta"},
+                                                                      new { value = "Montenegro" , text = "Montenegro"},
+                                                                      new { value = "Estonia" , text = "Estonia"},
+                                                                      new { value = "Finland" , text = "Finland"},
+                                                                      new { value = "France" , text = "France"},
+                                                                      new { value = "Romania" , text = "Romania"},
+                                                                      new { value = "Russia" , text = "Russia"},
+                                                                     new { value = "Serbia" , text = "Serbia"},
+                                                                     new { value = "Sweden" , text = "Sweden"}}, "value", "text"), "--select one--")
+
+                                                      </div>
+                                                      @Html.ValidationMessageFor(model => model.sest, "", new { @class = "text-danger" })
+                                                  </div><br />
+
+                                                        <div class="form-group">
+
+                                                            @Html.LabelFor(model => model.sedam, htmlAttributes: new { @class = "control-label col-md-2", @style = "color:yellow;font-size: large;" })
+                                                            <div class="col-md-4">
+                                                                @Html.DropDownListFor(model => model.sedam, new SelectList(
+                                                new List<Object>{new { value = "Armenia" , text = "Armenia"},
+                                                                            new { value = "Belarus" , text = "Belarus"},
+                                                                            new { value = "Belgium" , text = "Belgium"},
+                                                                            new { value = "BIH" , text = "BIH"},
+                                                                            new { value = "Ukraine" , text = "Ukraine"},
+                                                                            new { value = "Malta" , text = "Malta"},
+                                                                            new { value = "Montenegro" , text = "Montenegro"},
+                                                                            new { value = "Estonia" , text = "Estonia"},
+                                                                            new { value = "Finland" , text = "Finland"},
+                                                                            new { value = "France" , text = "France"},
+                                                                            new { value = "Romania" , text = "Romania"},
+                                                                            new { value = "Russia" , text = "Russia"},
+                                                                           new { value = "Serbia" , text = "Serbia"},
+                                                                           new { value = "Sweden" , text = "Sweden"}}, "value", "text"),"--select one--")
+
+                                                            </div>
+                                                            @Html.ValidationMessageFor(model => model.sedam, "", new { @class = "text-danger" })
+                                                        </div><br />
+
+                                                              <div class="form-group">
+
+                                                                  @Html.LabelFor(model => model.osam, htmlAttributes: new { @class = "control-label col-md-2", @style = "color:yellow;font-size: large;" })
+                                                                  <div class="col-md-4">
+                                                                      @Html.DropDownListFor(model => model.osam, new SelectList(
+                                                      new List<Object>{new { value = "Armenia" , text = "Armenia"},
+                                                                                  new { value = "Belarus" , text = "Belarus"},
+                                                                                  new { value = "Belgium" , text = "Belgium"},
+                                                                                  new { value = "BIH" , text = "BIH"},
+                                                                                  new { value = "Ukraine" , text = "Ukraine"},
+                                                                                  new { value = "Malta" , text = "Malta"},
+                                                                                  new { value = "Montenegro" , text = "Montenegro"},
+                                                                                  new { value = "Estonia" , text = "Estonia"},
+                                                                                  new { value = "Finland" , text = "Finland"},
+                                                                                  new { value = "France" , text = "France"},
+                                                                                  new { value = "Romania" , text = "Romania"},
+                                                                                  new { value = "Russia" , text = "Russia"},
+                                                                                 new { value = "Serbia" , text = "Serbia"},
+                                                                                 new { value = "Sweden" , text = "Sweden"}}, "value", "text"),"--select one--")
+
+                                                                  </div>
+                                                                  @Html.ValidationMessageFor(model => model.osam, "", new { @class = "text-danger" })
+                                                              </div><br />
+
+                                                                    <div class="form-group">
+
+                                                                        @Html.LabelFor(model => model.deset, htmlAttributes: new { @class = "control-label col-md-2", @style = "color:yellow;font-size: large;" })
+                                                                        <div class="col-md-4">
+                                                                            @Html.DropDownListFor(model => model.deset, new SelectList(
+                                                            new List<Object>{new { value = "Armenia" , text = "Armenia"},
+                                                                                        new { value = "Belarus" , text = "Belarus"},
+                                                                                        new { value = "Belgium" , text = "Belgium"},
+                                                                                        new { value = "BIH" , text = "BIH"},
+                                                                                        new { value = "Ukraine" , text = "Ukraine"},
+                                                                                        new { value = "Malta" , text = "Malta"},
+                                                                                        new { value = "Montenegro" , text = "Montenegro"},
+                                                                                        new { value = "Estonia" , text = "Estonia"},
+                                                                                        new { value = "Finland" , text = "Finland"},
+                                                                                        new { value = "France" , text = "France"},
+                                                                                        new { value = "Romania" , text = "Romania"},
+                                                                                        new { value = "Russia" , text = "Russia"},
+                                                                                       new { value = "Serbia" , text = "Serbia"},
+                                                                                       new { value = "Sweden" , text = "Sweden"}}, "value", "text"),"--select one--")
+
+                                                                        </div>
+                                                                        @Html.ValidationMessageFor(model => model.deset, "", new { @class = "text-danger" })
+                                                                    </div><br />
+
+                                                                          <div class="form-group">
+
+                                                                              @Html.LabelFor(model => model.dvanaest, htmlAttributes: new { @class = "control-label col-md-2", @style = "color:yellow;font-size: large;" })
+                                                                              <div class="col-md-4">
+                                                                                  @Html.DropDownListFor(model => model.dvanaest, new SelectList(
+                                                                  new List<Object>{new { value = "Armenia" , text = "Armenia"},
+                                                                                              new { value = "Belarus" , text = "Belarus"},
+                                                                                              new { value = "Belgium" , text = "Belgium"},
+                                                                                              new { value = "BIH" , text = "BIH"},
+                                                                                              new { value = "Ukraine" , text = "Ukraine"},
+                                                                                              new { value = "Malta" , text = "Malta"},
+                                                                                              new { value = "Montenegro" , text = "Montenegro"},
+                                                                                              new { value = "Estonia" , text = "Estonia"},
+                                                                                              new { value = "Finland" , text = "Finland"},
+                                                                                              new { value = "France" , text = "France"},
+                                                                                              new { value = "Romania" , text = "Romania"},
+                                                                                              new { value = "Russia" , text = "Russia"},
+                                                                                             new { value = "Serbia" , text = "Serbia"},
+                                                                                             new { value = "Sweden" , text = "Sweden"}}, "value", "text"), "--select one--")<br />
+
+                                                                              </div>
+                                                                              @Html.ValidationMessageFor(model => model.dvanaest, "", new { @class = "text-danger" })
+                                                                          </div><br />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input style="width:90px;height:25px;" type="submit" value="VOTE" class="btn btn-default" />
+            </div>
+        </div>
+        <br /><br />
+
+
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+
+
+    }
+</body>
+</html>

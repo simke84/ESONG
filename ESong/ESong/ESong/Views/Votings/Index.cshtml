@@ -1,0 +1,193 @@
+﻿@model IEnumerable<Voting>
+
+@{
+    Layout = "~/Views/Shared/_zadetalje.cshtml";
+}
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 " />
+    <title>Details</title>
+    <style>
+        @@media (min-width:801px) {
+            #detalji {
+                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+                color: orangered;
+            }
+
+                #detalji td, #detalji th {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                }
+
+                #detalji tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+
+                #detalji tr:hover {
+                    background-color: #ddd;
+                }
+
+                #detalji th {
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    text-align: left;
+                    background-color: red;
+                    color: white;
+                }
+
+            #navbar {
+                color: #f2f2f2;
+                opacity: 3;
+                background-color: #333;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                transition: top 0.3s;
+                display: block;
+            }
+
+                #navbar a {
+                    opacity: 2;
+                    float: left;
+                    display: block;
+                    color: #f2f2f2;
+                    text-align: center;
+                    padding: 15px;
+                    text-decoration: none;
+                    font-size: 17px;
+                }
+
+                    #navbar a:hover {
+                        background-color: #ddd;
+                        color: black;
+                    }
+
+
+            .footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 42px;
+                background-color: #333;
+                color: #f2f2f2;
+                text-align: center;
+                opacity: 5;
+            }
+        }
+
+      
+
+
+
+
+
+
+
+
+
+    </style>
+
+
+</head>
+
+<body>
+    <div id="navbar">
+        <a href="@Url.Action("IndexStrana", "Home")">Home</a>
+        <a href="@Url.Action("CountriesPage", "Home")">Countries</a>
+        <a href="@Url.Action("Index", "Res")">Results</a>
+
+    </div>
+    <p style="color:yellow;font-size:x-large;">
+        Voting details
+    </p>
+    <table id="detalji" class="table" border="1">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ZemljeGlasaci)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.jedan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tri)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cetiri)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sest)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sedam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.osam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.deset)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dvanaest)
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.ZemljeGlasaci)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.jedan)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.dva)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.tri)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.cetiri)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.pet)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.sest)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.sedam)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.osam)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.deset))
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.dvanaest)
+                </td>
+
+            </tr>
+
+        }
+
+
+    </table>
+</body>
+</html>

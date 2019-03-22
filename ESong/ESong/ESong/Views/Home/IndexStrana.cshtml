@@ -1,0 +1,388 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+
+    <link rel="stylesheet" href="~/Scripts/bootstrap.min.css">
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="@Url.Content("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")"></script>
+    <script src="@Url.Content("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")"></script>
+
+
+
+    <style>
+
+        @@media (min-width:801px) {
+
+            #glasaj {
+                margin-left: 600px;
+                font-style: oblique;
+            }
+
+            #naslov{font-style:oblique;
+                    position:center;
+                    margin-left:550px;
+                    height:100px;
+                   
+            }
+
+            #navbar {
+                background-color: #333;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                display: block;
+                transition: top 0.3s;
+            }
+
+                #navbar a {
+                    float: left;
+                    display: block;
+                    color: #f2f2f2;
+                    text-align: center;
+                    padding: 15px;
+                    text-decoration: none;
+                    font-size: 17px;
+                }
+
+                    #navbar a:hover {
+                        background-color: #ddd;
+                        color: black;
+                    }
+
+
+
+            #prazan {
+                flex: 1;
+                margin:10px;
+                border: 10px;
+                width: 50%;
+                
+            }
+            #beliprostor {
+                position:center;
+                white-space: pre;
+                display: flex;
+                flex-direction: row;
+                width: 60%;
+                margin-left:260px;
+            }
+            #dugme1:hover {
+                background-color: orangered
+            }
+
+            .naslov {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                text-align: center;
+            }
+
+            body {
+                position: relative;
+            }
+
+            #section1 {
+                z-index: -1;
+                padding-top: 50px;
+                padding-right:10px;
+                height: 500px;
+                color: #fff;
+                background-color: #1E88E5;
+                margin-top: 10px;
+            }
+
+            #section2 {
+                padding-top: 50px;
+                padding-right: 0px;
+                height: 1200px;
+                color: black;
+                background-color: whitesmoke;
+            }
+
+            #section3 {
+                padding-top: 50px;
+                height: 1000px;
+                color: #fff;
+                background-color: #1E88E5;
+            }
+
+
+
+            #header {
+                background-color: #f1f1f1;
+                height: 0px;
+                padding: 15px 10px;
+                color: black;
+                text-align: center;
+                font-size: 90px;
+                font-weight: bold;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                transition: 0.2s;
+                height: 30px;
+                z-index: 2;
+            }
+
+            hr {
+                height: 4px;
+                border-top: 1px solid #ccc;
+            }
+
+
+
+
+            .footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 42px;
+                background-color: #333;
+                color: #f2f2f2;
+                text-align: center;
+            }
+
+
+            .column {
+                margin: auto;
+                width: 50%;
+                border: 3px solid #1E88E5;
+                padding: 10px;
+            }
+
+            * {
+                font-family: tahoma;
+            }
+            /* .testheight Not required - unless testing ;) */
+            .testheight {
+                height: 1200px;
+                font-size: 20px;
+                text-align: center;
+                padding: 100px 20px;
+            }
+
+            .scrolltop {
+                display: none;
+                width: 100%;
+                color: #f1f1f1;
+                background-color: #f1f1f1;
+                margin: 0 auto;
+                position: fixed;
+                bottom: 20px;
+                right: 10px;
+            }
+
+
+
+            .scroll {
+                position: absolute;
+                right: 10px;
+                left:-13px;
+                width:100%;
+                bottom: 20px;
+                background: #b2b2b2;
+                background: rgba(178,178,178,0.7);
+                padding: 20px;
+                text-align: center;
+                -o-transition: 0.5s;
+                margin-right: 0px;
+                cursor: pointer;
+                transition: 0.5s;
+                -moz-transition: 0.5s;
+                -webkit-transition: 0.5s;
+            }
+
+                .scroll:hover {
+                    background: rgba(178,178,178,1.0);
+                    transition: 0.5s;
+                    -moz-transition: 0.5s;
+                    -webkit-transition: 0.5s;
+                    -o-transition: 0.5s;
+                }
+
+                    .scroll:hover .fa {
+                        padding-top: -10px;
+                    }
+
+                .scroll .fa {
+                    font-size: 30px;
+                    margin-top: -5px;
+                    margin-left: 1px;
+                    transition: 0.5s;
+                    -moz-transition: 0.5s;
+                    -webkit-transition: 0.5s;
+                    -o-transition: 0.5s;
+                }
+
+                .scroll icon {
+                    margin-right: 0px;
+                }
+
+            .scrolltop {
+                margin: auto;
+                width: 1%;
+                padding: 10px;
+            }
+
+            i {
+                border: solid whitesmoke;
+                border-width: 0 5px 5px 0;
+                display: inline-block;
+                padding: 1px;
+                color: red;
+            }
+
+            .up {
+                transform: rotate(-135deg);
+                -webkit-transform: rotate(-135deg);
+                padding: 1px;
+                margin: 2px,1px,1px,2px;
+                color: red;
+            }
+
+            #zvezda {
+                margin: auto;
+                width: 800px;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+            }
+
+            #zvezda1 {
+                height:10px;
+                margin: auto;
+                width: 800px;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        
+    </style>
+
+
+
+
+
+
+
+
+</head>
+
+<div class='thetop'></div>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+
+    <div id="navbar">
+        <a href="#veza1">Countries</a>
+        <a href="#veza2">Results</a>
+       </div><br /><br /><br />
+
+
+
+
+
+
+
+    <h1  id ="naslov"style="color: #1E88E5;font-size:xx-large">EUROVISION 2019</h1><hr />
+
+    <div id="zvezda1">
+        <span style="font-size:1500%;color:rgb(167, 11, 11);">&bigstar;</span>
+        <span style="font-size:1500%;color:rgb(167, 11, 11);">&bigstar;</span>
+        <span style="font-size:1500%;color:rgb(167, 11, 11);">&bigstar;</span>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div id="section1" class="container-fluid" style="background-image:url('/img/melissa-askew-15335-unsplash.jpg');background-size:100%;background-size:cover;opacity:0.7;">
+
+
+
+        <div id="zvezda">
+            <span style="font-size:1500%;color:whitesmoke;">&bigstar;</span>
+            <span style="font-size:1500%;color:whitesmoke;">&bigstar;</span>
+            <span style="font-size:1500%;color:whitesmoke;">&bigstar;</span>
+        </div>
+    </div>
+    <div id="section2" class="container-fluid" style="background-image:url('/img/adam-jang-320626-unsplash.jpg');background-size:100%;background-size:cover;opacity:0.7;">
+        <h1 id="glasaj" style="color: #1E88E5 ">VOTING</h1> <br><hr /><br />
+
+        <a style="display:block" name="veza1"></a><br />
+        <a style ="display:block"name="veza2"></a><br />
+
+        <div id="beliprostor">
+            <div><input type="button" onmouseover="this.style.backgroundColor='red';return true;" onmouseout="this.style.backgroundColor='midnightblue';return true;" style="width:250px;height:90px;background-color:midnightblue;color:antiquewhite" value="Countries" onclick="location.href='@Url.Action("CountriesPage", "Home")'" /></div> <div id="prazan"></div>
+            <div> <input class="dugme" type="button" onmouseover="this.style.backgroundColor='red';return true;" onmouseout="this.style.backgroundColor='midnightblue';return true;" style="width:250px; height:90px;background-color:midnightblue;color:antiquewhite" value="Results" onclick="location.href='@Url.Action("Index", "Res")'" /></div>
+        </div>
+
+
+        
+    </div>
+
+
+
+    <div class='scrolltop' style="display: none;!important">
+        <div class='scroll icon' style="width:5px;height:3px;margin-right:0px;margin-left:2px;background-color:rgb(167, 11, 11);"><i class="up" style="padding:5px 5px 5px 5px;margin-left:0px;position:center;width:4px;"></i></div>
+    </div>
+
+    <div class="footer">
+        <p style="margin: 9px;">
+            Copyright &copy; DejanS 2019
+        </p>
+    </div>
+
+    <script>
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $('.scrolltop:hidden').stop(true, true).fadeIn();
+            } else {
+                $('.scrolltop').stop(true, true).fadeOut();
+            }
+        });
+        $(function () { $(".scroll").click(function () { $("html,body").animate({ scrollTop: $(".thetop").offset().top }, "1000"); return false }) })
+
+    </script>
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-50px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

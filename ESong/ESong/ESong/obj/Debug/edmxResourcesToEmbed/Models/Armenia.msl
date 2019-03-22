@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ESONGModel1StoreContainer" CdmEntityContainer="ESONGEntities3">
+    <FunctionImportMapping FunctionImportName="GetArmenia" FunctionName="ESONGModel1.Store.Armenia">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ESONGModel1.GetArmenia_Result">
+          <ScalarProperty Name="ZemljeGlasaci" ColumnName="ZemljeGlasaci" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

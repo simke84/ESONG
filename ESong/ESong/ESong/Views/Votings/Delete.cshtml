@@ -1,0 +1,112 @@
+﻿@model Voting
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Voting</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.jedan)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.jedan)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.dva)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.dva)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.tri)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.tri)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.cetiri)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.cetiri)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.pet)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.pet)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.sest)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.sest)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.sedam)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.sedam)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.osam)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.osam)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.deset)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.deset)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.dvanaest)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.dvanaest)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

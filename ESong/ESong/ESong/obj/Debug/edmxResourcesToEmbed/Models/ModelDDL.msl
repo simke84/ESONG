@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ESONGModel1StoreContainer" CdmEntityContainer="ESONGEntities2">
+    <EntitySetMapping Name="VOTINGs">
+      <EntityTypeMapping TypeName="ESONGModel1.VOTING">
+        <MappingFragment StoreEntitySet="VOTING">
+          <ScalarProperty Name="ZemljeGlasaci" ColumnName="ZemljeGlasaci" />
+          <ScalarProperty Name="jedan" ColumnName="jedan" />
+          <ScalarProperty Name="dva" ColumnName="dva" />
+          <ScalarProperty Name="tri" ColumnName="tri" />
+          <ScalarProperty Name="cetiri" ColumnName="cetiri" />
+          <ScalarProperty Name="pet" ColumnName="pet" />
+          <ScalarProperty Name="sest" ColumnName="sest" />
+          <ScalarProperty Name="sedam" ColumnName="sedam" />
+          <ScalarProperty Name="osam" ColumnName="osam" />
+          <ScalarProperty Name="deset" ColumnName="deset" />
+          <ScalarProperty Name="dvanaest" ColumnName="dvanaest" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

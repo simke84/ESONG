@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ESONGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ESONGEntities4" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="GetPRIKAZ" ReturnType="Collection(ESONGModel.SORTIRAJ_Result)" />
+    <FunctionImport Name="GetSORTIRAJ" ReturnType="Collection(ESONGModel.SORTIRAJ_Result)" />
+  </EntityContainer>
+  <ComplexType Name="SORTIRAJ_Result">
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Score" Nullable="true" />
+  </ComplexType>
+</Schema>

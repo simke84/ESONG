@@ -1,0 +1,801 @@
+﻿@model IEnumerable<Voting>
+
+
+
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries</title>
+
+    <link rel="stylesheet" href="~/Scripts/bootstrap.min.css">
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="@Url.Content("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")"></script>
+    <script src="@Url.Content("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")"></script>
+
+
+
+    <style>
+
+        @@media (min-width:801px) {
+            #poruka {
+                color: whitesmoke;
+                font-size: x-large;
+            }
+
+            #navbar {
+                color: #f2f2f2;
+                opacity: 3;
+                background-color: #333;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                transition: top 0.3s;
+                display: block;
+            }
+
+                #navbar a {
+                    opacity:2;
+                    float: left;
+                    display: block;
+                    color: #f2f2f2;
+                    text-align: center;
+                    padding: 15px;
+                    text-decoration: none;
+                    font-size: 17px;
+                }
+
+                    #navbar a:hover {
+                        background-color: #ddd;
+                        color: black;
+                    }
+
+
+
+
+
+
+            .naslov {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                text-align: center;
+            }
+
+            body {
+                position: relative;
+            }
+
+            #section1 {
+                z-index: -1;
+                padding-top: 50px;
+                height: 2400px;
+                color: #fff;
+                background-color: #1E88E5;
+                margin-top: 0px;
+            }
+
+            #section2 {
+                padding-top: 50px;
+                height: 200px;
+                color: black;
+                background-color: whitesmoke;
+            }
+
+            #section3 {
+                padding-top: 50px;
+                height: 1400px;
+                color: #fff;
+                background-color: #1E88E5;
+            }
+
+
+
+            #header {
+                background-color: #f1f1f1;
+                height: 0px;
+                padding: 15px 10px;
+                color: black;
+                text-align: center;
+                font-size: 90px;
+                font-weight: bold;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                transition: 0.2s;
+                height: 30 px;
+                z-index: 2;
+            }
+
+            hr {
+                height: 4px;
+                border-top: 1px solid #ccc;
+            }
+
+
+
+
+            .footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 42px;
+                background-color: #333;
+                color: #f2f2f2;
+                text-align: center;
+            }
+
+
+            .column {
+                margin: auto;
+                width: 50%;
+                border: 3px solid #1E88E5;
+                padding: 10px;
+            }
+
+            * {
+                font-family: tahoma;
+            }
+            /* .testheight Not required - unless testing ;) */
+            .testheight {
+                height: 1200px;
+                font-size: 20px;
+                text-align: center;
+                padding: 100px 20px;
+            }
+
+            .scrolltop {
+                display: none;
+                width: 100%;
+                color: #f1f1f1;
+                background-color: #f1f1f1;
+                margin: 0 auto;
+                position: fixed;
+                bottom: 20px;
+                right: 10px;
+            }
+
+
+
+            .scroll {
+                position: absolute;
+                right: 10px;
+                left:-10px;
+                bottom: 20px;
+                background: #b2b2b2;
+                background: rgba(178,178,178,0.7);
+                padding: 20px;
+                text-align: center;
+                margin: 0 0 0 0;
+                cursor: pointer;
+                transition: 0.5s;
+                -moz-transition: 0.5s;
+                -webkit-transition: 0.5s;
+                -o-transition: 0.5s;
+            }
+
+                .scroll:hover {
+                    background: rgba(178,178,178,1.0);
+                    transition: 0.5s;
+                    -moz-transition: 0.5s;
+                    -webkit-transition: 0.5s;
+                    -o-transition: 0.5s;
+                }
+
+                    .scroll:hover .fa {
+                        padding-top: -10px;
+                    }
+
+                .scroll .fa {
+                    font-size: 30px;
+                    margin-top: -5px;
+                    margin-left: 1px;
+                    transition: 0.5s;
+                    -moz-transition: 0.5s;
+                    -webkit-transition: 0.5s;
+                    -o-transition: 0.5s;
+                }
+
+                .scroll icon {
+                    margin-right: 0px;
+                }
+
+            .scrolltop {
+                margin: auto;
+                width: 1%;
+                padding: 10px;
+            }
+
+            i {
+                position: center;
+                border: solid whitesmoke;
+                border-width: 0 5px 5px 0;
+                display: inline-block;
+                color: red;
+            }
+
+            .up {
+                transform: rotate(-135deg);
+                -webkit-transform: rotate(-135deg);
+                padding: 3px;
+                margin: 0px,1px,1px,0px;
+                color: red;
+            }
+
+            @@media (min-width:801px) {
+                #zvezda {
+                    margin: auto;
+                    width: 800px;
+                    padding: 10px;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+    </style>
+
+
+
+
+
+
+
+
+</head>
+
+
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div id="navbar">
+        <a href="@Url.Action("IndexStrana", "Home")">Home</a>
+        <a href="@Url.Action("Index", "Res")">Results</a>
+        <a href="@Url.Action("Index", "Votings")">Details</a>
+    </div>
+
+
+
+
+
+    <div id="section1" class="container-fluid" style="background-image:url('/img/melissa-askew-15335-unsplash.jpg');background-size:100%;background-size:cover;opacity:1;">
+        <div class='thetop'></div>
+        <h1 id="kraj" style="color:yellow;font-size:55px;text-align:center;" ;>VOTE</h1> <br>
+        <h1 id="prikazi" style="display:none;color:yellow;">SEE THE VOTING RESULTS!!!</h1>
+        <div id="zvezda">
+            <span style="font-size:1500%;color:yellow;">&bigstar;</span>
+            <span style="font-size:1500%;color:yellow;">&bigstar;</span>
+            <span style="font-size:1500%;color:yellow;">&bigstar;</span>
+        </div>
+
+
+        <p id="test1">@Html.ActionLink("ARMENIA", "Create", "Armenia", null, null, null, null, new { @class = "newimage" })</p>
+        <br /><br />
+
+
+        <p id="test2">@Html.ActionLink("BELARUS", "Create", "Belarus", null, null, null, null, new { @class = "newimage1" })</p>
+        <br />
+        <br />
+        <p id="test3">@Html.ActionLink("BELGIUM", "Create", "Belgium", null, null, null, null, new { @class = "newimage2" })</p>
+        <br />
+        <br />
+        <p id="test4">@Html.ActionLink("BIH", "Create", "Bih", null, null, null, null, new { @class = "newimage3" })</p>
+        <br />
+        <br />
+        <p id="test5">@Html.ActionLink("CYPRUS", "Create", "Cyprus", null, null, null, null, new { @class = "newimage4" })</p>
+        <br />
+        <br />
+        <p id="test6">@Html.ActionLink("MALTA", "Create", "Malta", null, null, null, null, new { @class = "newimage5" })</p>
+        <br />
+        <br />
+        <p id="test7">@Html.ActionLink("MONTENEGRO", "Create", "Montenegro", null, null, null, null, new { @class = "newimage6" })</p>
+        <br />
+        <br />
+        <p id="test8">@Html.ActionLink("ESTONIA", "Create", "Estonia", null, null, null, null, new { @class = "newimage7" })</p>
+        <br />
+        <br />
+        <p id="test9">@Html.ActionLink("FINLAND", "Create", "Finland", null, null, null, null, new { @class = "newimage8" })</p>
+        <br />
+        <br />
+        <p id="test10">@Html.ActionLink("FRANCE", "Create", "France", null, null, null, null, new { @class = "newimage9" })</p>
+        <br />
+        <br />
+        <p id="test11">@Html.ActionLink("ROMANIA", "Create", "Romania", null, null, null, null, new { @class = "newimage10" })</p>
+        <br />
+        <br />
+        <p id="test12">@Html.ActionLink("RUSSIA", "Create", "Russia", null, null, null, null, new { @class = "newimage11" })</p>
+        <br />
+        <br />
+        <p id="test13">@Html.ActionLink("SERBIA", "Create", "Serbia", null, null, null, null, new { @class = "newimage12" })</p>
+        <br />
+        <br />
+        <p id="test14">@Html.ActionLink("SWEDEN", "Create", "Sweden", null, null, null, null, new { @class = "newimage13" })</p>
+        <br />
+        <br />
+        <p id="test15">@Html.ActionLink("UKRAINE", "Create", "Ukraine", null, null, null, null, new { @class = "newimage14" })</p>
+
+
+        <div id="zvezda">
+            <span style="font-size:1500%;color:yellow;">&bigstar;</span>
+            <span style="font-size:1500%;color:yellow;">&bigstar;</span>
+            <span style="font-size:1500%;color:yellow;">&bigstar;</span>
+        </div>
+
+
+
+
+        <div class='scrolltop' style="display: none;!important">
+            <div class='scroll icon' style="width:3px;height:3px;margin-right:2px;margin-left:2px;background-color:rgb(167, 11, 11);"><i class="up" style="padding:5px;margin:0px;position:absolute;right:5px;width:4px;"></i></p></i></div>
+        </div>
+
+
+
+    </div>
+
+    <div class="footer">
+        <p style="margin: 9px;">
+            Copyright &copy; DejanS 2019
+        </p>
+    </div>
+
+    <script>
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $('.scrolltop:hidden').stop(true, true).fadeIn();
+            } else {
+                $('.scrolltop').stop(true, true).fadeOut();
+            }
+        });
+        $(function () { $(".scroll").click(function () { $("html,body").animate({ scrollTop: $(".thetop").offset().top }, "1000"); return false }) })
+
+    </script>
+    <script>
+        var nova = $("naziv")
+
+
+    </script>
+
+    <style type="text/css">
+        a.newimage {
+            width: 100px;
+            height: 50px;
+            color: yellow;
+            font-size: xx-large;
+            background: url(../../fvcns/armenia-76x76.png) no-repeat top left;
+            display: block;
+            text-indent: 100px;
+            text-align: center;
+        }
+    </style>
+    <style type="text/css">
+        a.newimage1 {
+            width: 100px;
+            height: 50px;
+            color: yellow;
+            font-size: xx-large;
+            background: url(../../fvcns/blr-76x76.png) no-repeat top left;
+            display: block;
+            text-indent: 100px;
+            text-align: center;
+        }
+    </style>
+    <style type="text/css">
+        a.newimage2 {
+            width: 100px;
+            height: 50px;
+            color: yellow;
+            font-size: xx-large;
+            background: url(../../fvcns/belg76x76.png) no-repeat top left;
+            display: block;
+            text-indent: 100px;
+            text-align: center;
+        }
+    </style>
+    <style type="text/css">
+        a.newimage3 {
+            width: 100px;
+            height: 50px;
+            color: yellow;
+            font-size: xx-large;
+            background: url(../../fvcns/bih-76x76.png) no-repeat top left;
+            display: block;
+            text-indent: 100px;
+            text-align: center;
+        }
+    </style>
+    <style type="text/css">
+        a.newimage4 {
+            width: 100px;
+            height: 50px;
+            color: yellow;
+            font-size: xx-large;
+            background: url(../../fvcns/cyprus-76x76.png) no-repeat top left;
+            display: block;
+            text-indent: 100px;
+            text-align: center;
+        }
+    </style>
+    <style type="text/css">
+        a.newimage5 {
+            width: 100px;
+            height: 50px;
+            color: yellow;
+            font-size: xx-large;
+            background: url(../../fvcns/malta-76x76.png) no-repeat top left;
+            display: block;
+            text-indent: 100px;
+            text-align: center;
+        }
+    </style>
+    <style type="text/css">
+        a.newimage6 {
+            width: 100px;
+            height: 50px;
+            color: yellow;
+            font-size: xx-large;
+            background: url(../../fvcns/montenegro-76x76.png) no-repeat top left;
+            display: block;
+            text-indent: 100px;
+            text-align: center;
+        }
+    </style>
+    <style type="text/css">
+        a.newimage7 {
+            width: 100px;
+            height: 50px;
+            color: yellow;
+            font-size: xx-large;
+            background: url(../../fvcns/estonia-76x76.png) no-repeat top left;
+            display: block;
+            text-indent: 100px;
+            text-align: center;
+        }
+    </style>
+    <style type="text/css">
+        a.newimage8 {
+            width: 100px;
+            height: 50px;
+            color: yellow;
+            font-size: xx-large;
+            background: url(../../fvcns/finl-76x76.png) no-repeat top left;
+            display: block;
+            text-indent: 100px;
+            text-align: center;
+        }
+    </style>
+    <style type="text/css">
+        a.newimage9 {
+            width: 100px;
+            height: 50px;
+            color: yellow;
+            font-size: xx-large;
+            background: url(../../fvcns/france-76x76.png) no-repeat top left;
+            display: block;
+            text-indent: 100px;
+            text-align: center;
+        }
+    </style>
+    <style type="text/css">
+        a.newimage10 {
+            width: 100px;
+            height: 50px;
+            color: yellow;
+            font-size: xx-large;
+            background: url(../../fvcns/romania-76x76.png) no-repeat top left;
+            display: block;
+            text-indent: 100px;
+            text-align: center;
+        }
+    </style>
+    <style type="text/css">
+        a.newimage11 {
+            width: 100px;
+            height: 50px;
+            color: yellow;
+            font-size: xx-large;
+            background: url(../../fvcns/russia-76x76.png) no-repeat top left;
+            display: block;
+            text-indent: 100px;
+            text-align: center;
+        }
+    </style>
+    <style type="text/css">
+        a.newimage12 {
+            width: 100px;
+            height: 50px;
+            color: yellow;
+            font-size: xx-large;
+            background: url(../../fvcns/serbia-76x76.png) no-repeat top left;
+            display: block;
+            text-indent: 100px;
+            text-align: center;
+        }
+    </style>
+    <style type="text/css">
+        a.newimage13 {
+            width: 100px;
+            height: 50px;
+            color: yellow;
+            font-size: xx-large;
+            background: url(../../fvcns/sweden-76x76.png) no-repeat top left;
+            display: block;
+            text-indent: 100px;
+            text-align: center;
+        }
+    </style>
+    <style type="text/css">
+        a.newimage14 {
+            width: 100px;
+            height: 50px;
+            color: yellow;
+            font-size: xx-large;
+            background: url(../../fvcns/ukraine-76x76.png) no-repeat top left;
+            display: block;
+            text-indent: 100px;
+            text-align: center;
+        }
+    </style>
+
+
+
+
+
+    @if (ViewBag.Nova1 != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                alert("You have successfully voted")
+            };
+
+            document.getElementById("test1").remove();
+
+        </script>
+
+    }
+
+    @if (ViewBag.Nova2 != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                alert("You have successfully voted")
+            };
+
+            document.getElementById("test2").remove();
+
+        </script>
+
+    }
+
+    @if (ViewBag.Nova3 != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                alert("You have successfully voted")
+            };
+
+            document.getElementById("test3").remove();
+
+        </script>
+
+    }
+
+
+    @if (ViewBag.Nova4 != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                alert("You have successfully voted")
+            };
+
+            document.getElementById("test4").remove();
+
+        </script>
+
+    }
+
+    @if (ViewBag.Nova5 != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                alert("You have successfully voted")
+            };
+
+            document.getElementById("test5").remove();
+
+        </script>
+
+    }
+
+    @if (ViewBag.Nova6 != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                alert("You have successfully voted")
+            };
+
+            document.getElementById("test6").remove();
+
+        </script>
+
+    }
+
+    @if (ViewBag.Nova7 != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                alert("You have successfully voted")
+            };
+
+            document.getElementById("test7").remove();
+
+        </script>
+
+    }
+
+    @if (ViewBag.Nova8 != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                alert("You have successfully voted")
+            };
+
+            document.getElementById("test8").remove();
+
+        </script>
+
+    }
+
+    @if (ViewBag.Nova9 != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                alert("You have successfully voted")
+            };
+
+            document.getElementById("test9").remove();
+
+        </script>
+
+    }
+
+    @if (ViewBag.Nova10 != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                alert("You have successfully voted")
+            };
+
+            document.getElementById("test10").remove();
+
+        </script>
+
+    }
+    @if (ViewBag.Nova11 != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                alert("You have successfully voted")
+            };
+
+            document.getElementById("test11").remove();
+
+        </script>
+
+    }
+
+    @if (ViewBag.Nova12 != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                alert("You have successfully voted")
+            };
+
+            document.getElementById("test12").remove();
+
+        </script>
+
+    }
+
+    @if (ViewBag.Nova13 != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                alert("You have successfully voted")
+            };
+
+            document.getElementById("test13").remove();
+
+        </script>
+
+    }
+
+    @if (ViewBag.Nova14 != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                alert("You have successfully voted")
+            };
+
+            document.getElementById("test14").remove();
+
+        </script>
+
+    }
+
+    @if (ViewBag.Nova15 != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                alert("You have successfully voted")
+            };
+
+            document.getElementById("test15").remove();
+
+        </script>
+
+    }
+
+    @if (ViewBag.Nova15 != null && ViewBag.Nova14 != null && ViewBag.Nova13 != null && ViewBag.Nova12 != null && ViewBag.Nova11 != null && ViewBag.Nova10 != null && ViewBag.Nova9 != null && ViewBag.Nova8 != null && ViewBag.Nova7 != null && ViewBag.Nova6 != null && ViewBag.Nova5 != null && ViewBag.Nova4 != null && ViewBag.Nova3 != null && ViewBag.Nova2 != null && ViewBag.Nova1 != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                alert("All countries voted, congratulations!!!!")
+            };
+
+            document.getElementById("kraj").remove();
+            document.getElementById("prikazi").style.display = "block";
+
+
+        </script>
+
+    }
+
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-50px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

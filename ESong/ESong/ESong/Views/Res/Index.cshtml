@@ -1,0 +1,110 @@
+﻿@model IEnumerable<ESong.Models.SORTIRAJ_Result>
+@{
+    Layout = "~/Views/Shared/_zaglasanje.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 " />
+    <title>Results</title>
+    <style>
+
+        @@media (min-width:801px) {
+
+            #navbar {
+                color: #f2f2f2;
+                opacity: 3;
+                background-color: #333;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                transition: top 0.3s;
+                display: block;
+            }
+
+                #navbar a {
+                    opacity: 2;
+                    float: left;
+                    display: block;
+                    color: #f2f2f2;
+                    text-align: center;
+                    padding: 15px;
+                    text-decoration: none;
+                    font-size: 17px;
+                }
+
+                    #navbar a:hover {
+                        background-color: #ddd;
+                        color: black;
+                    }
+
+
+            .footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 42px;
+                background-color: #333;
+                color: #f2f2f2;
+                text-align: center;
+                opacity:5;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="navbar">
+        <a href="@Url.Action("IndexStrana", "Home")">Home</a>
+        <a href="@Url.Action("CountriesPage", "Home")">Countries</a>
+        <a href="@Url.Action("Index", "Votings")">Details</a>
+
+    </div>
+
+    <div>
+
+        <table class="table"
+               border="1">
+            <tr>
+                <td> <div class="col-md-2 " style="color:red;font-size:x-large">@Html.DisplayNameFor(model => model.Country)</div></td>
+                <td><div class="col-md-2 " style="color:red;font-size:x-large">@Html.DisplayNameFor(model => model.Score)</div></td>
+
+
+
+
+            </tr>
+
+            @foreach (var item in Model)
+
+            {
+                <tr>
+                    <td><div class="col-md-2 " style="color:darkorange;font-size:large">@Html.DisplayFor(model => item.Country)</div></td>
+                    <td><div class="col-md-2 " style="color:darkorange;font-size:large">@Html.DisplayFor(model => item.Score)</div></td>
+
+
+
+
+                </tr>
+
+
+            }
+
+
+
+        </table>
+
+
+    </div>
+
+    <div class="footer">
+        <p style="margin: 9px;">
+            Copyright &copy; DejanS 2019
+        </p>
+    </div>
+</body>
+</html>

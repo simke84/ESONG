@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ESONGModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="VOTING">
+    <Key>
+      <PropertyRef Name="ZemljeGlasaci" />
+    </Key>
+    <Property Name="ZemljeGlasaci" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="jedan" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="dva" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="tri" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="cetiri" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="pet" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="sest" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="sedam" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="osam" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="deset" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="dvanaest" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ESONGModel1StoreContainer">
+    <EntitySet Name="VOTING" EntityType="Self.VOTING" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

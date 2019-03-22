@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ESong",
+    "\\ESong\\Content",
+    "\\ESong\\Controllers",
+    "\\ESong\\Hubs",
+    "\\ESong\\Views",
+    "\\ESong\\Views\\Shared",
+    "\\ESong\\Views\\Signalni",
+    "\\ESong\\Views\\Sweden",
+    "\\ESong\\Views\\Ukraine"
+  ],
+  "SelectedNode": "\\ESong\\Views\\Signalni\\Index.cshtml",
+  "PreviewInSolutionExplorer": false
+}

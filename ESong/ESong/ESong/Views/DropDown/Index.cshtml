@@ -1,0 +1,63 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        function cleanMonth(ddl) {
+            var val = ddl.options[ddl.selectedIndex].value;
+
+            //Clear all items
+            $("#ddlMonth2 > option").remove();
+
+            //Add all options from dropdown 1
+            $("#" + ddl.id + "> option").each(function () {
+                var opt = document.createElement("option");
+                opt.text = this.text;
+                opt.value = this.value;
+                document.getElementById("ddlMonth2").options.add(opt);
+            });
+
+            //Remove selected
+            $("#ddlMonth2 option[value='" + val + "']").remove();
+        }
+    </script>
+</head>
+<body>
+    <select id="ddlMonth" name="ddlMonth" onchange="cleanMonth(this);">
+        <option value="1">(01) January</option>
+        <option value="2">(02) February</option>
+        <option value="3">(03) March</option>
+        <option value="4">(04) April</option>
+        <option value="5">(05) May</option>
+        <option value="6">(06) June</option>
+        <option value="7">(07) July</option>
+        <option value="8">(08) August</option>
+        <option value="9">(09) September</option>
+        <option value="10">(10) October</option>
+        <option value="11">(11) November</option>
+        <option value="12">(12) December</option>
+    </select>
+    <select id="ddlMonth2" name="ddlMonth">
+        <option value="1">(01) January</option>
+        <option value="2">(02) February</option>
+        <option value="3">(03) March</option>
+        <option value="4">(04) April</option>
+        <option value="5">(05) May</option>
+        <option value="6">(06) June</option>
+        <option value="7">(07) July</option>
+        <option value="8">(08) August</option>
+        <option value="9">(09) September</option>
+        <option value="10">(10) October</option>
+        <option value="11">(11) November</option>
+        <option value="12">(12) December</option>
+    </select>
+</body>
+</html>
+
